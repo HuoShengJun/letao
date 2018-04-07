@@ -37,6 +37,35 @@ $(function(){
     })
   }
 
+  //2-通过时间委托给按钮注册点击事件
+  $('.lt_content tbody').on('click','.btn',function(){
+    //console.log("hehe");
+    //让模态框显示
+    $('#userModal').modal('show');
+    var id = $(this).parent().data('id');
+    console.log(id);
+    var isDelete = $(this).hasClass("btn-success")?1:0;
+    console.log(isDelete);
+    $('#submitBtn').off('click').on('click',function(){
+      $.ajax({
+        type:'post',
+        url:'/user/updateUser',
+        data:{
+          id:id,
+          isDelete:isDelete
+        },
+        success:function(info){
+          console.log(info);
+          if(info.success){
+            $('#userModal').modal('hide');
+            render();
+          }
+        }
+
+      })
+    })
+  })
+
 
 
 })
