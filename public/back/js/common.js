@@ -18,14 +18,14 @@ $(document).ajaxStop(function(){
 //如果后端响应头中设置了 Content-Type:application/json
 //jquery 会自动识别，将返回数据类型，当成json字符串解析对象
 if(location.href.indexOf("login.html")===-1){
-  console.log("hehehe");
+  //console.log("hehehe");
   $.ajax({
     type:"get",
     url:"/employee/checkRootLogin",
     success:function(info){
-      console.log(info);
+      //console.log(info);
       if(info.success){
-        console.log("登录了")
+        //console.log("登录了")
       }
       if(info.error===400){
         location.href ="login.html";

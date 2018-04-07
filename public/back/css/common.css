@@ -19,6 +19,11 @@ a:visited{
 .red{
   color: #A94442;
 }
+.table.table-bordered th,
+.table.table-bordered td{
+  text-align: center;
+  vertical-align: middle;
+}
 .mt_150 {
   margin-top: 150px;
 }
