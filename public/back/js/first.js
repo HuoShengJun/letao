@@ -51,7 +51,7 @@ $(function(){
     fields:{
       categoryName:{
         //校验的规则
-        validator:{
+        validators:{
         //  非空
           notEmpty:{
           //  提示信息
