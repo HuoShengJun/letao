@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>Title</title>
+  <link rel="icon" href="./favicon.ico">
+  <link rel="stylesheet" href="lib/fa/css/font-awesome.css">
+  <link rel="stylesheet" href="lib/mui/css/mui.css">
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/category.css">
+</head>
+<body>
+<!--容器-->
+<div class="lt_container">
+  <!--头部开始-->
+  <div class="lt_header">
+    <a class="icon_left" href="index.html"><i class="fa fa-home"></i></a>
+    <h3>乐淘云购</h3>
+    <a class="icon_right" href="search.html"><i class="fa fa-search"></i></a>
+  </div>
+  <!--左侧部分-->
+  <div class="category_left">
+    <div class="mui-scroll-wrapper">
+      <div class="mui-scroll">
+        <!--这里放置真实显示的DOM内容-->
+        <ul>
+          <!--<li><a class="current" href="#">运动馆</a></li>-->
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+  <!--右侧部分-->
+  <div class="category_right">
+    <div class="mui-scroll-wrapper">
+      <div class="mui-scroll">
+        <!--这里放置真实显示的DOM内容-->
+        <ul>
+          <!--<li>-->
+            <!--<a href="#">-->
+              <!--<img src="images/active1.png" alt="">-->
+              <!--<p>耐克</p>-->
+            <!--</a>-->
+          <!--</li>-->
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!--底部开始-->
+  <div class="lt_footer">
+    <ul>
+      <li>
+        <a href="index.html">
+          <i class="fa fa-home"></i>
+          <p>首页</p>
+        </a>
+      </li>
+      <li>
+        <a class="current"  href="category.html">
+          <i class="fa fa-bars"></i>
+          <p>分类页</p>
+        </a>
+      </li>
+      <li>
+        <a href="car.html">
+          <i class="fa fa-shopping-cart"></i>
+          <p>购物车</p>
+        </a>
+      </li>
+      <li>
+        <a href="user.html">
+          <i class="fa fa-user"></i>
+          <p>会员中心</p>
+        </a>
+      </li>
+    </ul>
+    </a>
+  </div>
+
+</div>
+  <script src="lib/mui/js/mui.min.js"></script>
+  <script src="lib/zepto/zepto.min.js"></script>
+  <script src="lib/artTemplate/template-web.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/category.js"></script>
+<script type="text/template" id="list_tmp">
+  {{each rows v i}}
+    <li><a data-id="{{v.id}}" href="#" class="{{i===0?'current':''}}">{{v.categoryName}}</a></li>
+  {{/each}}
+</script>
+<script type="text/template" id="pic_tmp">
+  {{if rows.length ===0}}
+    <p class="tips">没有更多内容了</p>
+  {{/if}}
+
+  {{each rows v i}}
+  <li>
+    <a href="#">
+      <img src="{{v.brandLogo}}" alt="">
+       <p>{{v.brandName}}</p>
+    </a>
+  </li>
+  {{/each}}
+</script>
+</body>
+</html>
