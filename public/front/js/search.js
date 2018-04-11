@@ -5,6 +5,8 @@ $(function(){
   //进行本地存储操作
   //约定：search_list为键名
   render();
+  //存储复杂数据类型，一定要将复杂数据类型先转换成Json字符串
+  //取的时候，先得到json字符串，在通过json.parse转换成复杂数据类型
   //专门用于读取本地存储中的历史记录数组
   function getHistory(){
     //保证将来处理的一定是个数组
@@ -69,5 +71,6 @@ $(function(){
     //  清空文本
       $('.lt_search input').val("");
 
+    location.href = "searchList.html?key=" + key;
   })
 })
